@@ -40,25 +40,20 @@ public class AddTaskTest {
     public void addTaskTest() throws InterruptedException {
         mainPage.loginButton.click();
         loginSection.emailTextBox.setText("arodasp@gmail.com");
-        //System.out.println("*** ingresa usuario");
         loginSection.passwordTextBox.setText("Jb123456");
-        //System.out.println("*** ingresa password");
         loginSection.loginButton.click();
-        //System.out.println("*** click boton login");
 
         menuSection.addTareaButton.click();
-        //System.out.println("*** click boton añadir tarea");
-        String taskName = "Task Taller 3";
+        String taskName = "Task Taller 4";
         tareaSection.descriptionTextBox.click();
         tareaSection.nameTextBox.setText(taskName);
         tareaSection.descriptionTextBox.click();
         tareaSection.descriptionTextBox.setText("Se añade una tarea como test adicional de "+taskName);
+        tareaSection.descriptionTextBox.pause();
         tareaSection.okAddButton.click();
         menuSection.labelTask.pause();
 
-
         Assertions.assertTrue(menuSection.labelTask.isControlDisplayed(),"ERROR! Task cannot be added");
-
     }
 
 }

@@ -2,9 +2,6 @@ package tests;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.LoginSection;
 import pages.MainPage;
 import pages.MenuSection;
@@ -44,11 +41,9 @@ public class LoginTest {
         //System.out.println("*** click boton");
         //System.out.println("*****************");
 
-
         Assertions.assertTrue(menuSection.configurationButton.isControlDisplayed(),"ERROR! The user is not logged in");
 
     }
-
 
     @AfterEach
     public void closeBrowser(){
